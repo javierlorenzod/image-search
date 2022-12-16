@@ -14,16 +14,17 @@ def fake_gan():
     return images
 
 def search_images_from_text(text):
-  return fake_gan()
+    return fake_gan()
 
 def search_images_from_image(image):
-  return fake_gan()
+    return fake_gan()
 
 
 def main():
-  text_to_image_iface = gr.Interface(fn=search_images_from_text, inputs="text", outputs="gallery")
-  image_to_image_iface = gr.Interface(fn=image_classifier, inputs="image", outputs="gallery")
-  demo = gr.TabbedInterface([text_to_image_iface, image_to_image_iface], ["Text query", "Image query"])
-
-if __name__ == "__main__":
+    text_to_image_iface = gr.Interface(fn=search_images_from_text, inputs="text", outputs="gallery")
+    image_to_image_iface = gr.Interface(fn=image_classifier, inputs="image", outputs="gallery")
+    demo = gr.TabbedInterface([text_to_image_iface, image_to_image_iface], ["Text query", "Image query"])
     demo.launch()
+    
+if __name__ == "__main__":
+    main()
