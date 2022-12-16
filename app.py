@@ -1,4 +1,5 @@
 import gradio as gr
+import random
 
 def fake_gan():
     images = [
