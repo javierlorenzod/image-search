@@ -22,7 +22,7 @@ def search_images_from_image(image):
 
 def main():
     text_to_image_iface = gr.Interface(fn=search_images_from_text, inputs="text", outputs="gallery")
-    image_to_image_iface = gr.Interface(fn=image_classifier, inputs="image", outputs="gallery")
+    image_to_image_iface = gr.Interface(fn=search_images_from_image, inputs="image", outputs="gallery")
     demo = gr.TabbedInterface([text_to_image_iface, image_to_image_iface], ["Text query", "Image query"])
     demo.launch()
     
