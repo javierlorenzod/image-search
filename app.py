@@ -1,5 +1,9 @@
 import gradio as gr
 import random
+from datasets import load_dataset
+from sentence_transformers import SentenceTransformer, util
+
+model = SentenceTransformer('clip-ViT-B-32')
 
 def fake_gan():
     images = [
@@ -15,11 +19,12 @@ def fake_gan():
     return images
 
 def search_images_from_text(text):
+    emb = model.encode(text)
     return fake_gan()
 
 def search_images_from_image(image):
+    image_emb = model.encode(image)
     return fake_gan()
-
 
 def main():
     text_to_image_iface = gr.Interface(fn=search_images_from_text, inputs="text", outputs="gallery")
