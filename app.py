@@ -13,7 +13,7 @@ def fake_gan():
                 "https://upload.wikimedia.org/wikipedia/commons/7/73/Cycliste_%C3%A0_place_d%27Italie-Paris.jpg",
                 "https://upload.wikimedia.org/wikipedia/commons/3/31/Great_white_shark_south_africa.jpg",
             ]
-        ), f"label {i}" if i != 0 else "label" * 50)
+        ), f"label {i}")
         for i in range(3)
     ]
     return images
